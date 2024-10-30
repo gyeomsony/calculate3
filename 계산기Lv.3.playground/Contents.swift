@@ -52,5 +52,4 @@ class Calculator {
 let addOperation = AddOperation()
 
 
-Calculator.calculator(firstNum: 10, secondNum: 20)
-   
+//추가추가
