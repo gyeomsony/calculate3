@@ -66,7 +66,7 @@ print("\(result)")
 
 // 입력받은 연산자에 따른 분기처리
 var inputOperator: String {
-    return ""
+    return "*"
 }
 
 sonCalculator.operation = {
@@ -75,7 +75,10 @@ sonCalculator.operation = {
         return AddOperation()
     case "-", "빼기", "sub":
         return SubOperation()
-        case
+    case "*", "곱하기", "mul":
+        return MulOperation()
+    case "/", "나누기", "div":
+        return DivOperation()
         
     default:
         return nil
