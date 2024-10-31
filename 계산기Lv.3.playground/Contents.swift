@@ -44,7 +44,7 @@ class Calculator {
     init(operation: Operation) {
         self.operation = operation
     }
-    
+    // calculator 실행 조건은 operation이 닐이 아닐 때 operate 연산작업을 해당넘에 맞게 진행한다.
     func calculator(firstNum: Double, secondNum: Double) -> Double? {
 
         return operation?.operate(firstNum: firstNum, secondNum: secondNum)
@@ -67,7 +67,7 @@ print("\(result)")
 // 입력받은 연산자에 따른 분기처리
 var inputOperator: String {
     return "*"
-}
+}// 여기가 연산자 넣는 부분이다.
 
 sonCalculator.operation = {
     switch inputOperator {
@@ -85,7 +85,7 @@ sonCalculator.operation = {
         
     }
 }()
-
+// 값 예시
 result = sonCalculator.calculator(firstNum: 5, secondNum: 4)
 print("\(result)")
 //연산 기호가 잘못돼서 result에 nil이 들어간 경우,프린트"error" nil이 아닌경우는 result를 그대로 프린트 한다.
@@ -97,7 +97,6 @@ if let result = result {
   
 
 //if let은 nil이 아닐경우를 먼저 실행하기 때문에 첫 프린트에는 닐이 아닌경우를 먼저 기입하고 else 다음이 닐일경우로 해줘야한다.
-
 
 
 //발생했던 오류 Cannot assign value of type '() -> any Operation' to type 'any Operation'
