@@ -410,26 +410,104 @@ import UIKit
 
 
 // Animal이라는 부모 클래스
-class Animal {
-    var name: String
-
-    init(name: String) {
-        self.name = name
-    }
-
-    func move() {
-        print("\(name)가 걸어갑니다.")
-    }
-}
-
-// Dog이라는 자식 클래스가 Animal을 상속받음
-class Dog: Animal {
-    func bark() {
-        print("\(name): 왈! 왈!")
-    }
-}
+//class Animal {
+//    var name: String
+//
+//    init(name: String) {
+//        self.name = name
+//    }
+//
+//    func move() {
+//        print("\(name)가 걸어갑니다.")
+//    }
+//}
+//
+//// Dog이라는 자식 클래스가 Animal을 상속받음
+//class Dog: Animal {
+//    func bark() {
+//        print("\(name): 왈! 왈!")
+//    }
+//}
 
 // 사용 예시
-let myDog = Dog(name: "소니")
-myDog.move()    // Animal의 move() 메서드를 사용함
-myDog.bark()    // Dog만의 bark() 메서드를 사용함
+//let myDog = Dog(name: "소니")
+//myDog.move()    // Animal의 move() 메서드를 사용함
+//myDog.bark()    // Dog만의 bark() 메서드를 사용함
+
+
+
+//class Car {  // Car라는 설계도를 만들고
+//    var color: String = "Red"  // 자동차의 속성
+//    func drive() { print("Vroom!") }  // 자동차의 동작
+//}
+//
+//let myCar = Car()  // 실제 자동차인 객체 'myCar'를 만든다.
+//myCar.drive()  // myCar가 움직인다.
+
+
+//class Calculator {
+//    func add(_ a: Double, _ b: Double) -> Double {
+//        return a + b  // 단순히 덧셈 결과를 반환한다.
+//    }
+//}
+//
+//let calc = Calculator()
+//print(calc.add(5, 3))  // 내부 계산 과정은 신경 쓰지 않고, 덧셈 기능만 사용한다.
+
+// 메서드 오버라이딩
+//class Animal {
+//    func makeSound() {
+//        print("어떠한 소리")
+//    }
+//}
+//
+//class Dog: Animal {
+//    override func makeSound() {
+//        print("왈왈랄왈!!!!")
+//    }
+//}
+//
+//class Cat: Animal {
+//    override func makeSound() {
+//        print("오징어 사와")
+//    }
+//}
+//
+//let myDog: Animal = Dog()
+//let myCat: Animal = Cat()
+//
+//myDog.makeSound()
+//myCat.makeSound()
+
+
+//메서드 오버로딩
+
+//class Calculator {
+//    // 같은 이름의 메서드지만 서로 다른 매개변수로 정의한다.
+//    func add(_ a: Double, _ b: Double) -> Double {
+//        return a + b
+//    }
+//
+//    func add(_ a: Int, _ b: Int) -> Int {
+//        return a + b
+//    }
+//}
+//
+//// 사용 예시
+//let calc = Calculator()
+//let result1 = calc.add(2.5, 3.5)  // Double 덧셈
+//let result2 = calc.add(2, 3)      // Int 덧셈
+
+
+//class 친구야 {
+//    private var 비밀: String = "이건 비밀이야"
+//    
+//    func 비밀접근가능() -> String {
+//        return 비밀
+//        
+//    }
+//}
+//
+//let 말해줘 = 친구야()
+////print(말해줘.비밀)
+//print(말해줘.비밀접근가능())
