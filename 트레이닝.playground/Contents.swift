@@ -366,44 +366,70 @@ import UIKit
 //
 //print(myPhone)
 
-var stringValue: String?
-print(stringValue)
-stringValue = "Hello"
-print(stringValue)
+//var stringValue: String?
+//print(stringValue)
+//stringValue = "Hello"
+//print(stringValue)
+//
+//var intValue: Int? = 123
+//var floatValue: Float? = 123.45
+//var boolValue: Bool? = true
+//
+//print(intValue)
+//print(floatValue)
+//print(boolValue)
+//
+//print(intValue == 123)
+//
+//
+//struct Dog {
+//    var toy: String?
+//}
+//
+//struct Person {
+//    var pet: Dog?
+//}
+//
+//let peson1: Person? = nil
+//print(peson1?.pet?.toy)
+//
+//let person2: Person? = Person(pet: nil)
+//print(person2?.pet?.toy)
+//
+//
+//let person3: Person? = Person(pet: Dog(toy: "ball"))
+//print(person3?.pet?.toy)
+//
+//
+////클로저 옵서녈 체이닝
+//
+//var optionalClosure: ((Int) -> Void)? = { value in
+//    print(value)
+//}
+//optionalClosure?(3)
 
-var intValue: Int? = 123
-var floatValue: Float? = 123.45
-var boolValue: Bool? = true
 
-print(intValue)
-print(floatValue)
-print(boolValue)
+// Animal이라는 부모 클래스
+class Animal {
+    var name: String
 
-print(intValue == 123)
+    init(name: String) {
+        self.name = name
+    }
 
-
-struct Dog {
-    var toy: String?
+    func move() {
+        print("\(name)가 걸어갑니다.")
+    }
 }
 
-struct Person {
-    var pet: Dog?
+// Dog이라는 자식 클래스가 Animal을 상속받음
+class Dog: Animal {
+    func bark() {
+        print("\(name): 왈! 왈!")
+    }
 }
 
-let peson1: Person? = nil
-print(peson1?.pet?.toy)
-
-let person2: Person? = Person(pet: nil)
-print(person2?.pet?.toy)
-
-
-let person3: Person? = Person(pet: Dog(toy: "ball"))
-print(person3?.pet?.toy)
-
-
-//클로저 옵서녈 체이닝
-
-var optionalClosure: ((Int) -> Void)? = { value in
-    print(value)
-}
-optionalClosure?(3)
+// 사용 예시
+let myDog = Dog(name: "소니")
+myDog.move()    // Animal의 move() 메서드를 사용함
+myDog.bark()    // Dog만의 bark() 메서드를 사용함
