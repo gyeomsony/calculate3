@@ -6,8 +6,8 @@
 
 ### 주요 구성 요소
 
-- **`Operator` Enum**: 가능한 연산자로 덧셈(`add`), 뺄셈(`subtract`), 곱셈(`multiply`), 나눗셈(`divide`), 나머지(`remainder`)를 정의한다.
-- **`Calculator` Class**: `calculate` 메서드를 통해 연산자(enum 타입)와 두 개의 숫자를 받아 연산을 수행한다. 나눗셈에서 0으로 나눌 경우 예외 처리를 위해 `print`로 오류 메시지를 출력하고 기본값을 반환한다.
+- `Operator Enum`: 가능한 연산자로 덧셈(`add`), 뺄셈(`subtract`), 곱셈(`multiply`), 나눗셈(`divide`), 나머지(`remainder`)를 정의한다.
+- `Calculator Class`: `calculate` 메서드를 통해 연산자(enum 타입)와 두 개의 숫자를 받아 연산을 수행한다. 나눗셈에서 0으로 나눌 경우 예외 처리를 위해 `print`로 오류 메시지를 출력하고 기본값을 반환한다.
 
 ### 사용 방법
 
@@ -25,15 +25,15 @@ print(result) // 7.0
 
 ## 주요 구성 요소
 
-- **`Operation` Protocol**: 연산자에 대한 공통 인터페이스로, `operate` 메서드를 통해 두 숫자를 받아 계산 결과를 반환한다.
+- `Operation Protocol` : 연산자에 대한 공통 인터페이스로, `operate` 메서드를 통해 두 숫자를 받아 계산 결과를 반환한다.
   
-- **Operation Classes**:
-  - `AddOperation`: 덧셈 연산을 수행하는 클래스이다.
-  - `SubOperation`: 뺄셈 연산을 수행하는 클래스이다.
-  - `MulOperation`: 곱셈 연산을 수행하는 클래스이다.
-- `DivOperation`: 나눗셈 연산을 수행하는 클래스이고, 0으로 나누는 경우 `0`을 반환하고 오류 메시지를 출력한다.
+## **Operation Classes**:
+- `AddOperation` : 덧셈 연산을 수행하는 클래스이다.
+- `SubOperation` : 뺄셈 연산을 수행하는 클래스이다.
+- `MulOperation` : 곱셈 연산을 수행하는 클래스이다.
+- `DivOperation` : 나눗셈 연산을 수행하는 클래스이고, 0으로 나누는 경우 `0`을 반환하고 오류 메시지를 출력한다.
 
-- `Calculator` Class: 특정 연산을 수행하는 기능을 제공하는 계산기 클래스이다. `Operation` 프로토콜을 준수하는 연산자를 설정해 계산을 수행하는 클래스이다.
+- `Calculator Class` : 특정 연산을 수행하는 기능을 제공하는 계산기 클래스이다. `Operation` 프로토콜을 준수하는 연산자를 설정해 계산을 수행하는 클래스이다.
 
 
 ## 사용 방법
