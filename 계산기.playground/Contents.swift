@@ -1,5 +1,9 @@
 import UIKit
 
+//레벨 1~2 까지 완료
+
+// 연산에 예외케이스를 주지 않으려고 enum을 사용해서 enum에 있는 케이스들로만 연산할 수 있게 했다.
+
 enum Operator {
     case add, subtract, multiply, divide, remainder
 }
@@ -22,6 +26,7 @@ class Calculator {
                 print("0으로 나눌 수 없습니다.")
                 return 0
             }
+            // 나머지 연산 코드
         case .remainder:
             return firstNum.truncatingRemainder(dividingBy: secondNum)
         }
