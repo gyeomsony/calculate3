@@ -39,21 +39,16 @@ print(result) // 7.0
 ## 사용 방법
 
 ```swift
-import UIKit
+var inputOperator: String {
+    return "*"
+} // 위에 연산자를 넣는다.
 
-// 덧셈 연산
-let calculator = Calculator(operation: AddOperation())
-var result = calculator.calculate(firstNum: 3, secondNum: 4)
-print("덧셈 결과: \(result ?? 0)")
+result = sonCalculator.calculator(firstNum: 5, secondNum: 4) // 각 넘버에 계산할 숫자를 기입한다.
+print("\(result)")
 
-// 연산자 동적 변경
-calculator.setOperation(inputOperator: "*")
-result = calculator.calculate(firstNum: 5, secondNum: 4)
-print("곱셈 결과: \(result ?? 0)")
-
-// 결과 처리
+// 연산자를 넣는 부분에 공백이나 "%$@" 같은 예외의 문자를 넣을 경우 "error" 를 프린트한다.
 if let result = result {
-    print("결과: \(result)")
+    print(result)
 } else {
     print("error")
 }
