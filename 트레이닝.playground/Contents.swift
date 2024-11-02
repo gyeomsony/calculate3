@@ -511,3 +511,230 @@ import UIKit
 //let 말해줘 = 친구야()
 ////print(말해줘.비밀)
 //print(말해줘.비밀접근가능())
+
+//---------------------
+
+/*
+ 할인 정책 만들기
+ 함수를 만들고 매개변수(값,할인대상)와 타입을 설정해준다
+ 만약 할인타입이 쿠폰일 경우 10% 할인을 해주고
+ 군인일 경우 50% 할인을 해주는 코드를 짜보자.
+ 그 외에는 할인이 없다
+ */
+
+//class priceCalculrator {
+//    func calculrator(price: Double, discountType: String) -> Double {
+//        if discountType == "coupon" {
+//            return price * 0.9
+//        } else if discountType == "soldier" {
+//            return price * 0.5
+//        } else {
+//            return price
+//        }
+//    }
+//}
+//calculator라는 PriceCalculator 클래스의 인스턴스를 생성하고,피자집이라는 가정을 한다.
+//let calculator = priceCalculrator()
+//let pizzaPrice = 10000
+//
+//// 쿠폰할인 적용
+//let couponDiscountPrice = calculator.calculrator(price: Double(pizzaPrice), discountType: "coupon")
+//print("쿠폰 할인 가격은 \(couponDiscountPrice)입니다")
+//
+//// 군인 할인 적용
+//let militaryDiscount = calculator.calculrator(price: Double(pizzaPrice), discountType: "soldier")
+//print("군인의 할인 가격은 \(militaryDiscount)입니다")
+//
+//// 할인 없는 경우
+//let defultPrice = calculator.calculrator(price: Double(pizzaPrice), discountType: "none")
+//print("당신의 가격은 \(defultPrice)입니다")
+
+
+//protocol DiscountPolicy {
+//    func discount(to price: Double) -> Double
+//}
+//// 쿠폰할인
+//class CouponDiscount: DiscountPolicy {
+//    func discount(to price: Double) -> Double {
+//        return price * 0.9
+//    }
+//}
+//// 군인할인
+//class MilitaryDiscount: DiscountPolicy {
+//    func discount(to price: Double) -> Double {
+//        return price * 0.5
+//    }
+//}
+//// 할인없음
+//class DefaultPrice: DiscountPolicy {
+//    func discount(to price: Double) -> Double {
+//        return price
+//    }
+//}
+//// 할인 정책 적용해서 최종 가격 알려주는 기능
+//class CalculatorPrice {
+//    func calculate(to price: Double, discount: DiscountPolicy) -> Double {
+//        return discount.discount(to: price)
+//    }
+//}
+//
+//// 인스턴스 생성
+//let calculator = CalculatorPrice()
+//let couponDiscount = CouponDiscount()
+//// 실행
+//let priceDiscountCoupon = calculator.calculate(to: 10000, discount: couponDiscount)
+//
+//print("쿠폰 할인가격은 \(priceDiscountCoupon)원 입니다.")
+
+//부모 클래스
+//class 새 {
+//    func fly() {
+//        print("새가 날고 있습니다")
+//    }
+//}
+////자식클래스
+//class 펭귄: 새 {
+//    override func fly() {
+//        print("펭귄은 날 수 없습니다")
+//    }
+//}
+////인스턴스 생성
+//let bird = 새()
+//let peng = 펭귄()
+//// override로 변경은 되지만 이러면 LSP에 어긋난다.
+//bird.fly()
+//peng.fly()
+
+//// 프로토콜로 비행가능 여부를 판단
+//protocol Flyable {
+//    func fly()
+//}
+//// 기본 구현
+//class 새 {}
+//// 참새는 날수 있어 프로토콜 적용
+//class 참새: 새, Flyable {
+//    func fly() {
+//        print("참새가 날고 있습니다")
+//    }
+//}
+//// 펭귄은 날수 없어 프로토콜을 채택하지 않음
+//class 펭귄: 새 {
+//    
+//}
+//
+//// 인스턴스 생성
+//let bird = 참새()
+//bird.fly()     // 출력됨
+//
+//let peng = 펭귄()
+//// 프로토콜 채택하지 않아서 출력이 안됨
+
+
+//protocol Printer {
+//    func printDocument()
+//    func scanDocument()
+//}
+//
+//class InkPrinter: Printer {
+//    func printDocument() {
+//        print("프린터기가 복사 중 입니다.")
+//    }
+//    func scanDocument() {
+//        print("프린터기가 스캔 중 입니다.")
+//    }
+//}
+//
+//let printing = InkPrinter()
+//printing.printDocument()
+//printing.scanDocument()
+
+//복사 프로토콜
+//protocol DocumentPrinter {
+//    func printDocument()
+//}
+////스캔 프로토콜
+//protocol DocumentScanner {
+//    func scanDocument()
+//}
+//
+//class InkPrinter: DocumentPrinter {
+//    func printDocument() {
+//        print("문서를 복사하는 중 입니다.")
+//    }
+//}
+//
+//class ScanPrinter: DocumentScanner {
+//    func scanDocument() {
+//        print("문서를 스캔하는 중 입니다.")
+//    }
+//}
+//
+//let printing = InkPrinter()
+//printing.printDocument()
+
+
+//DIP 안 좋은 예시
+//class 전구 {
+//    func 켜다() {
+//        print("전구를 켰습니다.")
+//    }
+//    func 끄다() {
+//        print("전구를 껐습니다.")
+//    }
+//}
+//
+//class Switch {
+//    private let 전구: 전구
+//    
+//    init(전구: 전구) {
+//        self.전구 = 전구
+//    } // 스위치가 전구를 직접 제어
+//    func toggle() {
+//        전구.켜다()
+//    }
+//}
+//let 전구스위치 = 전구()
+//전구스위치.켜다()
+
+
+//프로토콜 생성
+protocol 전환가능 {
+    func turnOn()
+    func turnOff()
+}
+//기존 전구 전환
+class 전구: 전환가능 {
+    func turnOn() {
+        print("전구가 켜졌습니다.")
+    }
+    func turnOff() {
+        print("전구가 꺼졌습니다.")
+    }
+}
+//팬 기능 추가!
+class 팬: 전환가능 {
+    func turnOn() {
+        print("팬이 켜졌습니다. 위이이잉~")
+    }
+    func turnOff() {
+        print("팬이 꺼졌습니다. 탁.")
+    }
+}
+class 전환 {
+    private let 기계: 전환가능
+    
+    init(기계: 전환가능) {
+        self.기계 = 기계
+    }
+    
+    func toggle() {
+        기계.turnOn() // 이제 전환은 전환가능 프로토콜에 의존하게 됨.
+    }
+}
+//인스턴스 생성
+let 전구키기 = 전구()
+let 팬켜기 = 팬()
+
+전구키기.turnOn()
+팬켜기.turnOn()
+팬켜기.turnOff()

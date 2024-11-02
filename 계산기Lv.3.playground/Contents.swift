@@ -67,7 +67,7 @@ print("\(result)")
 // 입력받은 연산자에 따른 분기처리
 var inputOperator: String {
     return "*"
-}// 여기가 연산자 넣는 부분이다.
+}
 
 sonCalculator.operation = {
     switch inputOperator {
@@ -88,7 +88,6 @@ sonCalculator.operation = {
 // 값 예시
 result = sonCalculator.calculator(firstNum: 5, secondNum: 4)
 print("\(result)")
-//연산 기호가 잘못돼서 result에 nil이 들어간 경우,프린트"error" nil이 아닌경우는 result를 그대로 프린트 한다.
 if let result = result {
     print(result)
 } else {
